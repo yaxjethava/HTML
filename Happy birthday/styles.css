@@ -1,0 +1,197 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 300vh; /* Adjust based on the number of sections */
+    transition: transform 0.5s ease-in-out;
+}
+
+.section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+#section1 {
+    background: linear-gradient(to bottom, pink, blue, white);
+    color: white;
+}
+
+#section2 {
+    background: linear-gradient(to bottom, lightcoral, lightgoldenrodyellow, lightseagreen);
+    color: black;
+}
+
+#section3 {
+    background: linear-gradient(to bottom, #2c3e50, #2980b9); /* Dark gray and light blue */
+    color: #000000; /* Light color for contrast */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile img {
+    width: 50vw; /* Less than half of the viewport width */
+    height: auto;
+    object-fit: cover;
+    border-radius: 0;
+    border: none;
+    box-shadow: 0 0 20px rgba(255, 136, 136, 0.5);
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.profile-info {
+    width: 50vw; /* Adjusted to be more than image width */
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(102, 200, 217, 0.816); /* Semi-transparent white background */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    border-left: 1px solid #ecf0f1;
+    transform: translateX(20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.profile-info h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.profile-info p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+.profile img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+.profile-info:hover {
+    background-color: rgba(239, 159, 244, 0.729); /* Fully opaque on hover */
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.animation h1, .wishes h2 {
+    font-size: 3em;
+    animation: float 3s ease-in-out infinite;
+}
+
+.animation h4 {
+    font-size: 1em;
+    animation: float 3s ease-in-out infinite;
+}
+
+.wishes p, .profile p {
+    font-size: 1.5em;
+    margin: 10px 0;
+    text-align: center;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.nav-button {
+    position:absolute;
+    bottom: 20px;
+
+    
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #ff14b1ea;
+    color: rgb(248, 248, 248);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.nav-button:hover {
+    background-color: #6ecefbc0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .animation h1, .wishes h2, .profile h2 {
+        font-size: 2em;
+    }
+
+    .wishes p, .profile p {
+        font-size: 1.2em;
+    }
+
+    .profile img {
+        width: 40%; /* Adjust for better view on mobile */
+        height: 70%;
+    }
+
+    .profile-info {
+        width: 50vw;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .animation h1, .wishes h2, .profile h2 {
+        font-size: 1.5em;
+    }
+
+    .wishes p, .profile p {
+        font-size: 1em;
+    }
+
+    .profile img {
+        width: 60vw;
+        height: auto;
+    }
+
+    .profile-info {
+        width: 60vw;
+        padding: 15px;
+    }
+}
+
+audio {
+    display: none;
+}
